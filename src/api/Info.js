@@ -8,13 +8,14 @@ import { Skeleton } from './../components/ui/Skeleton';
 import API_Service from './service/API_Service';
 
 export const Info = () => {
-  const [count, setCount] = useContext(CounterContext);
+  const [count] = useContext(CounterContext);
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   const fetchDataFromAPI = async () => {
     setLoading(true);
+    setHasError(false);
     try {
       const response = await API_Service.getData(API_URL[count]);
       setResponse(response.data);
@@ -27,13 +28,14 @@ export const Info = () => {
 
   useEffect(() => {
     fetchDataFromAPI();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   const { full_name, description, stargazers_count } = response;
   return (
     <>
       {loading ? (
-        <Skeleton>Loading...</Skeleton> //TODO
+        <Skeleton>Loading...</Skeleton>
       ) : hasError ? (
         <Message />
       ) : (
@@ -52,7 +54,6 @@ export const Info = () => {
           </ListItems>
         </List>
       )}
-      <button onClick={() => console.log(count)}>Count</button>
     </>
   );
 };
