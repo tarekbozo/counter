@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: #e2e1e0;
     font-family: Nunito, Helvetica, Sans-Serif;
+    text-align: center
   }
 `;
 

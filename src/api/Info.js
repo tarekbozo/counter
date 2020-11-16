@@ -4,7 +4,7 @@ import { CounterContext } from '../context/CounterContextProvider';
 import { Message } from '../components/ui/Message';
 import Star from './../components/ui/Star';
 import { ListItems, List, LisItem, Title } from './infoStyle';
-import { Skeleton } from './../components/ui/Skeleton';
+import { Loading } from '../components/ui/Loading';
 import API_Service from './service/API_Service';
 
 export const Info = () => {
@@ -35,7 +35,7 @@ export const Info = () => {
   return (
     <>
       {loading ? (
-        <Skeleton>Loading...</Skeleton>
+        <Loading />
       ) : hasError ? (
         <Message />
       ) : (

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button } from './Button';
 import { SmalltBtn } from './SmallButton';
 
 const Warning = styled.div`
