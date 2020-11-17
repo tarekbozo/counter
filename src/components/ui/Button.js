@@ -42,4 +42,8 @@ export const Button = styled.button`
   &:hover ${Icon} {
     background: white;
   }
+  &:disabled {
+    background: #eeeeee;
+    color: #666666;
+  }
 `;

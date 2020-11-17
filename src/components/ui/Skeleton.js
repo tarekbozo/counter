@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-const SkeletonPulse = styled.div`
+const Skeleton1 = styled.div`
   display: inline-block;
   margin-top: 40px;
-  height: 5vh;
+  height: 20px;
   width: 100%;
-  background: linear-gradient(-90deg, #c0392b 5%, #8e44ad 20%, #c0392b 80%);
+  background: linear-gradient(-90deg, #f5f5f5 5%, #f0f0f0 20%, #e8e8e8 80%);
   background-size: 85% 85%;
-  border-radius: 24px;
+  border-radius: 4px;
   animation: pulse 0.5s ease-in-out infinite;
   @keyframes pulse {
     0% {
@@ -18,8 +18,7 @@ const SkeletonPulse = styled.div`
     }
   }
 `;
-
-export const Loading = styled(SkeletonPulse)`
+export const Skeleton = styled(Skeleton1)`
   width: 5.5em;
   border-radius: 5px;
   &::before {
